@@ -13,12 +13,12 @@ const IndexPage = () => (
     </Layout>
     
     <body>
-    <div className="container">
-      <div id="login">
-        <h1>This is an example of the Authorization Code flow and test</h1>
-        <a href="/login" className="btn btn-primary">Log in with Spotify</a>
+      <div className="container">
+        <div id="login">
+          <h1>This is an example of the Authorization Code flow</h1>
+          <a href="/login" className="btn btn-primary">Log in with Spotify</a>
+        </div>
       </div>
-    </div>
     </body>
   </div>
 )
