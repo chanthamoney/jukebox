@@ -1,15 +1,15 @@
-# TypeScript Next.js example
+Web app that uses spotify api to create a personal playlist for users
+App worked on with manu, sanjana and kassi :)
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+# Tech Stack: 
+   TypeScript Next.js
 
 ## Deploy your own
-
 Deploy the example using [Vercel](https://vercel.com):
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
 
 ## How to use it?
-
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
 ```bash
@@ -21,12 +21,10 @@ yarn create next-app --example with-typescript with-typescript-app
 Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
 ## How to run?
-
 For Developer Mode: yarn dev
 
 
 ## Notes
-
 This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
 
 ```
