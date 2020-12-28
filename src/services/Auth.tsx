@@ -9,7 +9,7 @@ function handleAuth() {
   axios
     .get(
       "https://accounts.spotify.com/authorize?response_type=code&client_id=" +
-        clientId +
+        process.env.clientId +
         (scopes ? "&scope=" + encodeURIComponent(scopes) : "") +
         "&redirect_uri=" +
         encodeURIComponent(redirectUri)
