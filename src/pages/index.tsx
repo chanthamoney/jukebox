@@ -5,8 +5,8 @@ import Auth from "../services/Auth";
 
 const IndexPage = () => (
   <div>
-    <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
+    <Layout title="jukebox">
+      <h1>Welcome Jukebox</h1>
       <p>
         <Link href="/about">
           <a>About</a>
