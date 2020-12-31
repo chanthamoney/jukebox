@@ -7,13 +7,14 @@ import { Container, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: "100%",
+    height: "100vh",
+    border: "1px solid black",
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
     alignItems: "center",
+    justifyContent: "center",
   },
   button: {
-    marginTop: "25%",
     height: "100px",
     width: "200px",
   },
@@ -23,14 +24,13 @@ function LoginPage() {
   const classes = useStyles();
 
   return (
-    <body>
-      <div className={classes.root}>
-        <Image src="/image.png" layout="fill" />
-        <Button variant="contained" color="primary" className={classes.button}>
-          LOGIN TO SPOTIFY
-        </Button>
-      </div>
-    </body>
+    <div id="wrapper" className={classes.root}>
+      <Image src="/image.png" layout="fill" />
+
+      <Button variant="contained" color="primary" className={classes.button}>
+        LOGIN TO SPOTIFY
+      </Button>
+    </div>
   );
 }
 
