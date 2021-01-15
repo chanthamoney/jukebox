@@ -49,7 +49,7 @@ function playlistSelectorPage() {
 
   return (
     <body id="wrapper" className={classes.root}>
-      <div style={{ backgroundColor: "white" }} id="testGit">
+      <div style={{ backgroundColor: "white" }}>
         <TextField
           id="outlined-select-currency"
           select
