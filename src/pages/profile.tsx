@@ -1,12 +1,17 @@
-import { Avatar, Link, makeStyles } from "@material-ui/core";
+import { Avatar, Link, makeStyles, Paper } from "@material-ui/core";
 import React from "react";
 import Layout from "../components/Layout";
 
 const useStyles = makeStyles(() => ({
+  pageContainer: {
+    display: "flex",
+    flexDirection: "row",
+  },
   columnOne: {
     display: "flex",
     flexDirection: "column",
     flexWrap: "nowrap",
+    width: "40%",
   },
   profilePic: {
     variant: "square",
@@ -15,7 +20,6 @@ const useStyles = makeStyles(() => ({
   },
 
   link: {
-    width: "15%",
     height: "2%",
     paddingTop: "3%",
   },
@@ -23,6 +27,9 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     flexWrap: "nowrap",
+  },
+  info: {
+    padding: "10px",
   },
 }));
 
@@ -40,10 +47,13 @@ const ProfilePage = ({ userName }: ProfileProps) => {
   }
 
   return (
-    <div>
-      <Layout title={userName + " Profile"}>
-        <h1>Profile</h1>
+    <Layout title={userName + " Profile"}>
+      <div className={styles.pageContainer}>
+        <h1 className={styles.columnOne}>Profile</h1>
+        <h1 className={styles.columnTwo}>About You</h1>
+      </div>
 
+      <div className={styles.pageContainer}>
         <div className={styles.columnOne}>
           <Avatar
             variant="square"
@@ -57,9 +67,17 @@ const ProfilePage = ({ userName }: ProfileProps) => {
             </Link>
           </div>
         </div>
-        <div className={styles.columnTwo}>please be next to image</div>
-      </Layout>
-    </div>
+
+        <div className={styles.columnTwo}>
+          <Paper className={styles.info} elevation={0}>
+            {userName ? userName : "Name Not Known"}
+          </Paper>
+          <Paper className={styles.info} elevation={0}>
+            Last Song Listened To:{" "}
+          </Paper>
+        </div>
+      </div>
+    </Layout>
   );
 };
 
