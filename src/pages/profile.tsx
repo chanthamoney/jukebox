@@ -6,15 +6,17 @@ const useStyles = makeStyles(() => ({
   root: {
     height: "100vh",
     backgroundColor: "#CFE1C9",
+    backgroundSize: "100% 100%",
   },
   pageContainer: {
     display: "flex",
     flexDirection: "row",
   },
   columnOne: {
-    justifyContent: "center",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "flex-start",
+    paddingLeft: "5%",
     flexWrap: "nowrap",
     width: "40%",
   },
@@ -23,7 +25,6 @@ const useStyles = makeStyles(() => ({
     width: "200px",
     height: "200px",
   },
-
   link: {
     height: "2%",
     paddingTop: "3%",
@@ -35,6 +36,7 @@ const useStyles = makeStyles(() => ({
   },
   info: {
     padding: "10px",
+    margin: "5px",
   },
 }));
 
@@ -49,6 +51,11 @@ const ProfilePage = ({ userName }: ProfileProps) => {
     // axios.get profile pic
     const profilePic = userName ? "" : "./defaultProfile.png";
     return profilePic;
+  }
+
+  function stubForApiCallToSpotify(userName: string | undefined) {
+    // axios.get song stuff
+    return "so sad so sexy by Lykke Li";
   }
 
   return (
@@ -80,6 +87,9 @@ const ProfilePage = ({ userName }: ProfileProps) => {
             </Paper>
             <Paper className={styles.info} elevation={0}>
               Last Song Listened To:{" "}
+              <Paper className={styles.info}>
+                {stubForApiCallToSpotify(userName)}
+              </Paper>
             </Paper>
           </div>
         </div>
