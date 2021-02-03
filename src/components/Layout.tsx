@@ -26,10 +26,6 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
         |{" "}
         <Link href="/login">
           <a>Login</a>
-        </Link>{" "}
-        | <a href="/api/users">Users API</a> |{" "}
-        <Link href="/profile">
-          <a>Profile Page</a>
         </Link>
         |{" "}
         <Link href="/playlistSelector">
@@ -39,6 +35,10 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
         <Link href="/genreMap">
           <a> Genre map Page</a>
         </Link>
+        |{" "}
+        <Link href="/profile">
+          <a>Profile</a>
+        </Link>{" "}
       </nav>
     </header>
     {children}
