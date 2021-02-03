@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import Layout from "../components/Layout";
-import Auth from "../services/Auth";
 
 const IndexPage = () => (
   <div>
@@ -13,8 +12,8 @@ const IndexPage = () => (
         </Link>
       </p>
       <p>
-        <Link href="/auth">
-          <Auth />
+        <Link href="/login">
+          <a>Login</a>
         </Link>
       </p>
     </Layout>
