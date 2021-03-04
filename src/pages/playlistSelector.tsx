@@ -1,6 +1,4 @@
 import React from "react";
-import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core";

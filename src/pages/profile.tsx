@@ -59,42 +59,44 @@ const ProfilePage = ({ userName }: ProfileProps) => {
   }
 
   return (
-    <div className={styles.root}>
-      <Layout title={userName + " Profile"}>
-        <div className={styles.pageContainer}>
-          <h1 className={styles.columnOne}>Profile</h1>
-          <h1 className={styles.columnTwo}>About You</h1>
-        </div>
+    <body id="wrapper" className={styles.root}>
+      <div>
+        <Layout title={userName + " Profile"}>
+          <div className={styles.pageContainer}>
+            <h1 className={styles.columnOne}>Profile</h1>
+            <h1 className={styles.columnTwo}>About You</h1>
+          </div>
 
-        <div className={styles.pageContainer}>
-          <div className={styles.columnOne}>
-            <Avatar
-              variant="square"
-              className={styles.profilePic}
-              src={stubForDbCallToGetProfilePic(userName)}
-            />
+          <div className={styles.pageContainer}>
+            <div className={styles.columnOne}>
+              <Avatar
+                variant="square"
+                className={styles.profilePic}
+                src={stubForDbCallToGetProfilePic(userName)}
+              />
 
-            <div className={styles.link}>
-              <Link href="/genreMap">
-                <a>Explore Your Genre Map</a>
-              </Link>
+              <div className={styles.link}>
+                <Link href="/genreMap">
+                  <a>Explore Your Genre Map</a>
+                </Link>
+              </div>
+            </div>
+
+            <div className={styles.columnTwo}>
+              <Paper className={styles.info} elevation={0}>
+                {userName ? userName : "Name Not Known"}
+              </Paper>
+              <Paper className={styles.info} elevation={0}>
+                Last Song Listened To:{" "}
+                <Paper className={styles.info}>
+                  {stubForApiCallToSpotify(userName)}
+                </Paper>
+              </Paper>
             </div>
           </div>
-
-          <div className={styles.columnTwo}>
-            <Paper className={styles.info} elevation={0}>
-              {userName ? userName : "Name Not Known"}
-            </Paper>
-            <Paper className={styles.info} elevation={0}>
-              Last Song Listened To:{" "}
-              <Paper className={styles.info}>
-                {stubForApiCallToSpotify(userName)}
-              </Paper>
-            </Paper>
-          </div>
-        </div>
-      </Layout>
-    </div>
+        </Layout>
+      </div>
+    </body>
   );
 };
 
