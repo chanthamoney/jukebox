@@ -77,7 +77,7 @@ const ProfilePage = ({ userName }: ProfileProps) => {
 
               <div className={styles.link}>
                 <Link href="/genreMap">
-                  <a>Explore Your Genre Map</a>
+                  <a>Select a Playlist to Explore Your Genre Map</a>
                 </Link>
               </div>
             </div>
