@@ -3,7 +3,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 
 const scopes = "user-read-private user-read-email";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = process.env.redirectUri;
 
 function handleAuth() {
   axios
@@ -18,6 +18,7 @@ function handleAuth() {
       // handle success
       // extract token from response for use in other requests
       window.location = response.config.url;
+      console.log("Config URL: " + response.config.url)
       return true;
     })
     .catch(function (error: any) {

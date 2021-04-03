@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const scopes = "user-read-private user-read-email";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = process.env.redirectUri;
 
 function handleAuth() {
   axios
