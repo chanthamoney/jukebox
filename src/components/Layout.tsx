@@ -39,6 +39,10 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
         <Link href="/profile">
           <a>Profile</a>
         </Link>{" "}
+        |{" "}
+        <Link href="/callback">
+          <a>Callback test</a>
+        </Link>{" "}
       </nav>
     </header>
     {children}

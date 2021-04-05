@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
+import { requestAuthorization } from "./api/users/auth";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -24,7 +25,12 @@ function LoginPage() {
 
   return (
     <body id="wrapper" className={classes.root}>
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        onClick={requestAuthorization}
+      >
         LOGIN TO SPOTIFY
       </Button>
     </body>
