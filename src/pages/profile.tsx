@@ -1,5 +1,8 @@
-import { Avatar, Link, makeStyles, Paper } from "@material-ui/core";
-import React from "react";
+import { Avatar, Link, makeStyles, Paper, Button } from "@material-ui/core";
+import { getProfile } from "./api/users/auth";
+import { getAccessToken } from "../utils/helpers";
+
+import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 
 const useStyles = makeStyles(() => ({
@@ -58,6 +61,10 @@ const ProfilePage = ({ userName }: ProfileProps) => {
     return "so sad so sexy by Lykke Li";
   }
 
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   return (
     <body id="wrapper" className={styles.root}>
       <div>
@@ -91,6 +98,7 @@ const ProfilePage = ({ userName }: ProfileProps) => {
                 <Paper className={styles.info}>
                   {stubForApiCallToSpotify(userName)}
                 </Paper>
+                <Button>CLICK ME TO TEST API </Button>
               </Paper>
             </div>
           </div>
