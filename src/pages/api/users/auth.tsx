@@ -1,5 +1,10 @@
-import axios from "axios";
-import { handleAuthResponse, getAccessToken } from "../../../utils/helpers";
+import axios, { AxiosResponse } from "axios";
+import {
+  handleAuthResponse,
+  getAccessToken,
+  profile,
+} from "../../../utils/helpers";
+import { Profile } from "../../../interfaces/types";
 const scopes =
   "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
 // TODO: CALL THE REDIRECT URI W/ LOCAL ENV
@@ -62,10 +67,10 @@ export function callAuthApi(body: String) {
     .catch(function (error) {});
 }
 
-export function getProfile() {
-  console.log("get profile");
+export async function getProfile(): Promise<Profile> {
   let accessToken = getAccessToken();
-  console.log(accessToken);
+  var profileResponse: Profile;
+
   axios
     .get(PROFILE, {
       headers: {
@@ -73,9 +78,15 @@ export function getProfile() {
       },
     })
     .then((response) => {
-      console.log(response);
+      console.log("response", response);
+      console.log("responsedata", response.data);
+      profileResponse = response.data;
+      console.log(response.data.display_name);
+      console.log(profileResponse);
+      return profile(response.data);
     })
     .catch((err) => {
       console.log(err);
+      return err;
     });
 }

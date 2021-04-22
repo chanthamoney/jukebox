@@ -1,6 +1,6 @@
 import { Avatar, Link, makeStyles, Paper, Button } from "@material-ui/core";
 import { getProfile } from "./api/users/auth";
-import { getAccessToken } from "../utils/helpers";
+import { profile } from "../utils/helpers";
 
 import React, { useEffect } from "react";
 import Layout from "../components/Layout";
@@ -62,7 +62,15 @@ const ProfilePage = ({ userName }: ProfileProps) => {
   }
 
   useEffect(() => {
-    getProfile();
+    var profileResponse = getProfile();
+    console.log(profileResponse, "is this promise?");
+    console.log(
+      "then",
+      profileResponse.then((res) => {
+        console.log(res);
+      })
+    );
+    // console.log(profileResponse.display_name);
   }, []);
 
   return (

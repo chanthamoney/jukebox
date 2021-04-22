@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { getCode, fetchAccessToken } from "../utils/helpers";
 
 function callback() {
-  const [code, setCode] = useState("");
   useEffect(() => {
     // call this function only once to grab the code
     console.log("hello");

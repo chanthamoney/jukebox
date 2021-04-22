@@ -3,7 +3,6 @@ import { callAuthApi } from "../pages/api/users/auth";
 // parses the url for query params
 // Gets the code that allow us to ask spotify for the token
 const redirectUri: any = "http://localhost:3000/callback";
-const AUTHORIZE = "https://accounts.spotify.com/authorize";
 const clientId = process.env.clientId;
 const clientSecret = process.env.clientSecret;
 let access_token: any = null;
@@ -54,4 +53,12 @@ export function getAccessToken() {
 
 export function getRefreshToken() {
   return refresh_token;
+}
+
+export function profile(response: any) {
+  console.log("hellper", response);
+  return {
+    displayName: response.display_name,
+    // imageUrl: response.images.url,
+  };
 }
